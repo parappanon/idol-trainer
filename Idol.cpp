@@ -5,6 +5,17 @@
 #include "Idol.h"
 using namespace std::string_literals;
 
+void save_idol_progress(Idol your_idol) {
+    std::fstream savefile("save.txt", std::ios_base::out);
+
+    savefile << your_idol.get_name() << std::endl;
+    savefile << your_idol.get_unit() << std::endl;
+    savefile << your_idol.get_agency() << std::endl;
+    savefile << your_idol.get_dance() << std::endl;
+    savefile << your_idol.get_vocal() << std::endl;
+    savefile << your_idol.get_performance() << std::endl;
+}
+
 Idol create_idol() {
     std::cout << "Let's produce an idol!" << std::endl;
 
@@ -48,22 +59,12 @@ Idol create_idol() {
     std::cout << "Performance Stat: " << your_idol.get_performance() << std::endl;
     std::cout << "Idol Rank: " << your_idol.get_rank() << std::endl;
 
+    save_idol_progress(your_idol);
     return your_idol;
 }
 
-void save_idol_progress(Idol your_idol) {
-    std::fstream savefile("save.txt", std::ios_base::in);
-
-    savefile << your_idol.get_name() << std::endl;
-    savefile << your_idol.get_unit() << std::endl;
-    savefile << your_idol.get_agency() << std::endl;
-    savefile << your_idol.get_dance() << std::endl;
-    savefile << your_idol.get_vocal() << std::endl;
-    savefile << your_idol.get_performance() << std::endl;
-}
-
 Idol load_savefile() {
-    std::fstream savefile("save.txt", std::ios_base::out);
+    std::fstream savefile("save.txt", std::ios_base::in);
 
     // sets name, unit, agency, current rank
     std::string name, unit, agency, current_rank;

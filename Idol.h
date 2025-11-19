@@ -61,8 +61,8 @@ public:
     }
 };
 
+void save_idol_progress(Idol your_idol);
 Idol create_idol();
-void save_idol_progress();
 Idol load_savefile();
 
 #endif //IDOLCREATOR_IDOL_H

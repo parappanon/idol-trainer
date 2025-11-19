@@ -13,10 +13,12 @@ int main() {
     while (menu_option != 3) {
         if (menu_option == 1) {
             Idol your_idol = create_idol();
-            // start_gameplay();
+            break;
         } else if (menu_option == 2) {
             Idol your_idol = load_savefile();
+            break;
         }
     }
+    // start_gameplay();
     return 0;
 }

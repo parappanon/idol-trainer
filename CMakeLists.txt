@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 26)
 
 add_executable(idolTrainerGame main.cpp
         Idol.cpp
-        Idol.h)
+        Idol.h
+        Shu.cpp
+        Shu.h)
