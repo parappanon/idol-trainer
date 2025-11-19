@@ -2,12 +2,7 @@
 // Created by shu on 11/19/25.
 //
 
-#ifndef IDOLTRAINERGAME_IDOL_H
-#define IDOLTRAINERGAME_IDOL_H
-
-
-#ifndef IDOLCREATOR_IDOL_H
-#define IDOLCREATOR_IDOL_H
+#pragma once
 #include <iostream>
 #include <fstream>
 
@@ -36,7 +31,7 @@ public:
         this->performance = pf;
     }
     // destructor
-    virtual ~Idol() { };
+    virtual ~Idol() = default;
     // getters
     std::string get_name() {
         return name;
@@ -64,8 +59,4 @@ public:
 void save_idol_progress(Idol your_idol);
 Idol create_idol();
 Idol load_savefile();
-
-#endif //IDOLCREATOR_IDOL_H
-
-
-#endif //IDOLTRAINERGAME_IDOL_H
+void start_gameplay(Idol your_idol);

@@ -85,3 +85,7 @@ Idol load_savefile() {
 
     return your_idol;
 }
+
+void start_gameplay(Idol your_idol) {
+    // gameplay loop goes here
+}
