@@ -59,4 +59,5 @@ public:
 void save_idol_progress(Idol your_idol);
 Idol create_idol();
 Idol load_savefile();
+void start_game();
 void start_gameplay(Idol your_idol);

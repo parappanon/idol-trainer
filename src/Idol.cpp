@@ -63,6 +63,28 @@ Idol create_idol() {
     return your_idol;
 }
 
+Idol choose_idol() {
+    int chosen_idol;
+    std::cout << "Choose between these three idols:" << std::endl;
+    std::cout << "1. MIRIA AKAGI" << std::endl;
+    std::cout << "2. SHU ITSUKI" << std::endl;
+    std::cout << "3. YAMATO NIKAIDO" << std::endl;
+
+    std::cin >> chosen_idol;
+
+    Idol your_idol;
+
+    if (chosen_idol == 1) {
+        // Miria
+    } else if (chosen_idol == 2) {
+        // Shu
+    } else if (chosen_idol == 3) {
+        // Yamato
+    }
+
+    return your_idol;
+}
+
 Idol load_savefile() {
     std::fstream savefile("save.txt", std::ios_base::in);
 
@@ -84,6 +106,40 @@ Idol load_savefile() {
     Idol your_idol(name, unit, agency, current_rank, da, vo, pf);
 
     return your_idol;
+}
+
+void start_game() {
+    int menu_option;
+    std::cout << "Welcome to Idol Trainer!" << std::endl;
+    std::cout << "1. NEW" << std::endl;
+    std::cout << "2. LOAD SAVE FILE" << std::endl;
+    std::cout << "3. EXIT" << std::endl;
+    std::cin >> menu_option;
+
+    Idol your_idol;
+
+    while (menu_option != 3) {
+        if (menu_option == 1) {
+            int ng_option;
+            std::cout << "Do you want to produce a new idol or start with an existing one?" << std::endl;
+            std::cout << "1. Produce a new idol" << std::endl;
+            std::cout << "2. Choose a premade idol" << std::endl;
+
+            std::cin >> ng_option;
+
+            if (ng_option == 1 ) {
+                your_idol = create_idol();
+            } else if (ng_option == 2) {
+                your_idol = choose_idol();
+            }
+            break;
+        } if (menu_option == 2) {
+            your_idol = load_savefile();
+            break;
+        }
+    }
+
+start_gameplay(your_idol);
 }
 
 void start_gameplay(Idol your_idol) {
