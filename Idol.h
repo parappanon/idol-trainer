@@ -7,7 +7,7 @@
 #include <fstream>
 
 class Idol {
-private:
+protected:
     std::string name;
     std::string age;
     std::string unit;

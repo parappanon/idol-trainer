@@ -7,4 +7,6 @@ add_executable(idolTrainerGame main.cpp
         Idol.cpp
         Idol.h
         Shu.cpp
-        Shu.h)
+        Shu.h
+        Miria.cpp
+        Miria.h)
